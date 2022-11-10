@@ -55,3 +55,11 @@ export default function NavBar() {
   );
 }
 ```
+
+<br>
+
+### 1.5 styles JSX
+
+deprecated?
+
+<br>
