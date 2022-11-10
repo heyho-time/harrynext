@@ -6,8 +6,6 @@ export default function Home() {
 
   return (
     <div>
-      <NavBar />
-
       <div style={{ height: 100 }} />
 
       <span>counter {counter}</span>

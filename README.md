@@ -63,3 +63,24 @@ export default function NavBar() {
 deprecated?
 
 <br>
+
+### 1.6 Custom App
+
+- how to add global style
+
+- \_app.js 얘를 먼저 확인하고 기반하여 렌더한다. 청사진.
+
+```js
+import NavBar from "../components/NavBar";
+import "../styles/globals.css"; // 여기 custom app 에만 globalstyles을 import할 수 있다.
+// 나머지 파일들에선 cssmodules여야 한다.
+
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <NavBar />
+      <Component {...pageProps} />
+    </>
+  );
+}
+```
