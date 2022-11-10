@@ -15,3 +15,43 @@
 - a태그를 사용해 routing 하지않는다. 다른 페이지로 가면서 새로고침 되기때문.
 
 <br>
+
+### 1.4 CSS Modules
+
+```js
+// 2개 이상의 className을 적용하는 두가지 방법.
+
+import Link from "next/link";
+import { useRouter } from "next/router";
+import styles from "./NavBar.module.css";
+
+export default function NavBar() {
+  const router = useRouter();
+
+  return (
+    // <nav className={styles.nav}>
+    <nav>
+      <Link href="/">
+        <div
+          className={`${styles.link} ${
+            router.pathname === "/" ? styles.active : ""
+          }`}
+        >
+          Home
+        </div>
+      </Link>
+
+      <Link href="/about">
+        <div
+          className={[
+            styles.link,
+            router.pathname === "/about" ? styles.active : "",
+          ].join(" ")}
+        >
+          About
+        </div>
+      </Link>
+    </nav>
+  );
+}
+```
