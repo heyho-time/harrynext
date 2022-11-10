@@ -112,3 +112,34 @@ export default function App({ Component, pageProps }) {
 - fetch나 server에서 일어나는 data 관련 모든 작업이 완료되었을때 비로소 페이지를 render하고 싶을때. (loading없이) getServerSideProps를 쓴다.
 
 - 완전한 serverside rendering은 loading같은거 없다. 소스가 무조건 html. -> 데이터 들어오기 전까지 화면에 아무것도 안보일 것.
+
+<br>
+
+### 2.5 Dynamic Routes
+
+폴더구조로 routing함.
+
+```md
+-pages
+--movies
+---all.js
+---index.js
+```
+
+이러면 baseurl/movies, baseurl/movies/all 도 가능. 중첩라우팅 같은거
+
+페이지가 하나뿐이면 걍
+
+```md
+-pages
+--movies.js
+```
+
+url에 변수 넣는법.
+movies/1231 같은 url로 접속하면 나오게 될 페이지.
+
+```md
+-pages
+--movies
+---[id].js
+```
