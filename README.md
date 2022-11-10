@@ -32,11 +32,24 @@ export default function NavBar() {
     // <nav className={styles.nav}>
     <nav>
       <Link href="/">
-        <div className={`${styles.link} ${router.pathname === '/' ? styles.active : ''}`}>Home</div>
+        <div
+          className={`${styles.link} ${
+            router.pathname === '/' ? styles.active : ''
+          }`}
+        >
+          Home
+        </div>
       </Link>
 
       <Link href="/about">
-        <div className={[styles.link, router.pathname === '/about' ? styles.active : ''].join(' ')}>About</div>
+        <div
+          className={[
+            styles.link,
+            router.pathname === '/about' ? styles.active : '',
+          ].join(' ')}
+        >
+          About
+        </div>
       </Link>
     </nav>
   );
@@ -91,3 +104,11 @@ export default function App({ Component, pageProps }) {
 ### ~2.2 Fetching Data / Redirect and ReWrite
 
 - redirenction을 허용. next.config.js 에서 설정.
+
+<br>
+
+### ~2.4 Server Side Rendering / recap
+
+- fetch나 server에서 일어나는 data 관련 모든 작업이 완료되었을때 비로소 페이지를 render하고 싶을때. (loading없이) getServerSideProps를 쓴다.
+
+- 완전한 serverside rendering은 loading같은거 없다. 소스가 무조건 html. -> 데이터 들어오기 전까지 화면에 아무것도 안보일 것.
