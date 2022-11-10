@@ -21,9 +21,9 @@
 ```js
 // 2개 이상의 className을 적용하는 두가지 방법.
 
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "./NavBar.module.css";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import styles from './NavBar.module.css';
 
 export default function NavBar() {
   const router = useRouter();
@@ -32,24 +32,11 @@ export default function NavBar() {
     // <nav className={styles.nav}>
     <nav>
       <Link href="/">
-        <div
-          className={`${styles.link} ${
-            router.pathname === "/" ? styles.active : ""
-          }`}
-        >
-          Home
-        </div>
+        <div className={`${styles.link} ${router.pathname === '/' ? styles.active : ''}`}>Home</div>
       </Link>
 
       <Link href="/about">
-        <div
-          className={[
-            styles.link,
-            router.pathname === "/about" ? styles.active : "",
-          ].join(" ")}
-        >
-          About
-        </div>
+        <div className={[styles.link, router.pathname === '/about' ? styles.active : ''].join(' ')}>About</div>
       </Link>
     </nav>
   );
@@ -71,8 +58,8 @@ deprecated?
 - \_app.js 얘를 먼저 확인하고 기반하여 렌더한다. 청사진.
 
 ```js
-import NavBar from "../components/NavBar";
-import "../styles/globals.css"; // 여기 custom app 에만 globalstyles을 import할 수 있다.
+import NavBar from '../components/NavBar';
+import '../styles/globals.css'; // 여기 custom app 에만 globalstyles을 import할 수 있다.
 // 나머지 파일들에선 cssmodules여야 한다.
 
 export default function App({ Component, pageProps }) {
@@ -98,3 +85,9 @@ export default function App({ Component, pageProps }) {
 - 너무 큰 app을 원치 않기 때문에 Layout 컴포넌트를 이용한다.
 
 - Seo 파일 - head같은 작은 패키지들을 사용할 수 있다.
+
+<br>
+
+### ~2.2 Fetching Data / Redirect and ReWrite
+
+- redirenction을 허용. next.config.js 에서 설정.
