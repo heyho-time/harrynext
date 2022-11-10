@@ -18,6 +18,11 @@ module.exports = {
         source: '/api/movies',
         destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
       },
+      {
+        source: '/api/movies/:id',
+        destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}`,
+        // source, destination 에 id(명칭)를 동일하게 해야함.
+      },
     ];
   },
 };

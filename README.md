@@ -143,3 +143,21 @@ movies/1231 같은 url로 접속하면 나오게 될 페이지.
 --movies
 ---[id].js
 ```
+
+<br>
+
+### 2.6 Movie Detail
+
+라우터를 이용해 화면이동, 데이터 넘기기.
+
+- home 페이지 이미지는 onClick함수와 router로,
+
+- home 페이지 영화제목은 Link 로 라우팅. 비교해서봐.
+
+but,.
+
+user가 홈에서 클릭이 아닌 url을 치고 들어온다면?
+
+router.query.title 이 없어 loading이 뜬다.
+
+그치만 홈->상세 로 이동했을땐 더 빠르게 렌더된다는..

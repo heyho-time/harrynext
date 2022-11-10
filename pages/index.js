@@ -1,20 +1,52 @@
 import Seo from '../components/Seo';
 import styles from './index.module.css';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Home({ results }) {
   const { container, movieImg, h4 } = styles;
+  const router = useRouter();
+
+  const onClick = (id, title) => {
+    // 영화 제목도 넘겨주지만 유저에겐 가리는 것. masking
+    router.push(
+      {
+        pathname: `/movies/${id}`,
+        query: {
+          title,
+        },
+      },
+      `/movies/${id}`, // masking. query를 가린다.
+    );
+  };
 
   return (
     <div className={container}>
       <Seo title={'Home'} />
 
       {results?.map((movie) => (
-        <div key={movie.id}>
+        <div
+          key={movie.id}
+          onClick={() => onClick(movie.id, movie.original_title)}
+        >
           <img
             className={movieImg}
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           />
-          <h4 className={h4}>{movie.original_title}</h4>
+
+          <h4 className={h4}>
+            <Link
+              href={{
+                pathname: `/movies/${movie.id}`,
+                query: {
+                  title: movie.original_title,
+                },
+              }}
+              as={`/movies/${movie.id}`}
+            >
+              {movie.original_title}
+            </Link>
+          </h4>
         </div>
       ))}
     </div>
