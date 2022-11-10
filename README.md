@@ -9,3 +9,9 @@
 - react를 import하지않고, 또 확장자명이 jsx가 아니어도 태그를 쓸 수 있다. 하지만 hook을 쓰려면 import 해야됨.
 
 <br>
+
+### 1.3 Routing
+
+- a태그를 사용해 routing 하지않는다. 다른 페이지로 가면서 새로고침 되기때문.
+
+<br>
