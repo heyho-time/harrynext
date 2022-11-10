@@ -192,3 +192,9 @@ export default function Detail() {
   );
 }
 ```
+
+<br>
+
+### 404 pages
+
+;;;
