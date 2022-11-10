@@ -161,3 +161,34 @@ user가 홈에서 클릭이 아닌 url을 치고 들어온다면?
 router.query.title 이 없어 loading이 뜬다.
 
 그치만 홈->상세 로 이동했을땐 더 빠르게 렌더된다는..
+
+<br>
+
+### 2.7 Catch All
+
+뭐든 캐치해내는 URL
+
+- url에 영화제목을 넣거나 하면 SEO에 아주 좋다고 함.
+
+- 마스킹을 없애고 title이 url에 encoding 되도록 했다.
+
+- 그런데 누가 incognito 모드로 접속하면 에러남.
+  이 페이지가 백엔드에서 pre-render되기 때문이라함.
+  서버에는 router.query.params가 아직 존재하지 않아서.;
+
+```jsx
+import { useRouter } from 'next/router';
+
+export default function Detail() {
+  const router = useRouter();
+  const [title, id] = router.query.params || []; // 이렇게 해주면 incoginto에서도 에러안남.
+  //  clinet-side-rendering만 해준 것.
+  // 검색 엔진은 저 텍스트를 찾을 수 없다.
+
+  return (
+    <>
+      <h4>{title}</h4>
+    </>
+  );
+}
+```

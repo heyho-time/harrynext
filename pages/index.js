@@ -8,16 +8,7 @@ export default function Home({ results }) {
   const router = useRouter();
 
   const onClick = (id, title) => {
-    // 영화 제목도 넘겨주지만 유저에겐 가리는 것. masking
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      `/movies/${id}`, // masking. query를 가린다.
-    );
+    router.push(`/movies/${title}/${id}`);
   };
 
   return (
@@ -35,15 +26,7 @@ export default function Home({ results }) {
           />
 
           <h4 className={h4}>
-            <Link
-              href={{
-                pathname: `/movies/${movie.id}`,
-                query: {
-                  title: movie.original_title,
-                },
-              }}
-              as={`/movies/${movie.id}`}
-            >
+            <Link href={`/movies/${movie.original_title}/${movie.id}`}>
               {movie.original_title}
             </Link>
           </h4>
