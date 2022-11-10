@@ -1,15 +1,11 @@
-import { useState } from "react";
-import NavBar from "../components/NavBar";
+import Seo from "../components/Seo";
 
 export default function Home() {
-  const [counter, setCounter] = useState(0);
-
   return (
     <div>
-      <div style={{ height: 100 }} />
+      <Seo title={"Home"} />
 
-      <span>counter {counter}</span>
-      <button onClick={() => setCounter((prev) => prev + 1)}>Plus</button>
+      <h1>Home</h1>
     </div>
   );
 }

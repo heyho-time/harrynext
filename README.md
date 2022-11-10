@@ -84,3 +84,17 @@ export default function App({ Component, pageProps }) {
   );
 }
 ```
+
+<br>
+
+---
+
+<br>
+
+### 2.0 Patterns
+
+- \_app.js에서 Google Analytics, 스크립트 분석 등 글로벌 import를 한다.
+
+- 너무 큰 app을 원치 않기 때문에 Layout 컴포넌트를 이용한다.
+
+- Seo 파일 - head같은 작은 패키지들을 사용할 수 있다.
