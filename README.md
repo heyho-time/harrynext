@@ -60,7 +60,15 @@ export default function NavBar() {
 
 ### 1.5 styles JSX
 
-deprecated?
+컴포넌트 내에 style 태그를 이용해 스코프 안에서 스타일을 적용할 수 있다.
+
+```js
+<style jsx>`
+  a {
+    background-color:tomato;
+  }
+`</style>
+```
 
 <br>
 
