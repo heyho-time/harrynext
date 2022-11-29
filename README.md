@@ -1,4 +1,4 @@
-# nextjs
+# Nomad coder - nextjs
 
 ### ~1.2 static pre rendering
 
